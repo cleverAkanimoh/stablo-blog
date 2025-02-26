@@ -169,7 +169,7 @@ yarn sanity
 pnpm sanity
 ```
 
-## Step 5. Redploy
+## Step 5. Redeploy
 
 Once all of the above changes is made, make sure to redeploy to vercel once again to see all of your changes in production.
 
