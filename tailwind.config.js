@@ -7,11 +7,15 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: "class",
   theme: {
+    container: { center: true, padding: "0.25rem" },
     extend: {
       colors: {
         gray: colors.neutral
+      },
+      screen: {
+        xs: "480px"
       },
       fontFamily: {
         // to change, update font in _document.js

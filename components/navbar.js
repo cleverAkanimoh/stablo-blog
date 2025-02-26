@@ -8,6 +8,7 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { siteName } from "@/utils/config";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -28,6 +29,10 @@ export default function Navbar(props) {
   const rightmenu = [
     {
       label: "Archive",
+      href: "/archive"
+    },
+    {
+      label: "Activities",
       href: "/archive"
     }
   ];
@@ -74,7 +79,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Wada Cds
+                        {siteName}
                       </span>
                     )}
                   </Link>
@@ -88,7 +93,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Wada Cds
+                        {siteName}
                       </span>
                     )}
                   </Link>

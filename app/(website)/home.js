@@ -8,9 +8,9 @@ export default function Post({ posts }) {
       {posts && (
         <Container>
           <div className="grid gap-10 md:grid-cols-2 lg:gap-10 ">
-            {posts.slice(0, 2).map(post => (
+            {posts.slice(0, 2).map((post, idx) => (
               <PostList
-                key={post._id}
+                key={post?._id || idx}
                 post={post}
                 aspect="landscape"
                 preloadImage={true}

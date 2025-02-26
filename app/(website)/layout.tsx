@@ -52,7 +52,7 @@ export async function generateMetadata({ params }) {
   return await sharedMetaData(params);
 }
 
-export default async function Layout({ children, params }) {
+export default async function Layout({ children }) {
   const settings = await getSettings();
   return (
     <>
@@ -60,9 +60,9 @@ export default async function Layout({ children, params }) {
 
       <main>{children}</main>
 
-      <Footer {...settings} />
+      <Footer />
     </>
   );
 }
 // enable revalidate for all pages in this layout
-export const revalidate = 60;
+// export const revalidate = 60;
