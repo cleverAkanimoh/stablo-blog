@@ -9,14 +9,12 @@ import {
   EnvelopeIcon,
   PhoneIcon
 } from "@heroicons/react/24/outline";
+
 export default function Contact({ settings }) {
   const {
     register,
     handleSubmit,
     reset,
-    watch,
-    control,
-    setValue,
     formState: { errors, isSubmitSuccessful, isSubmitting }
   } = useForm({
     mode: "onTouched"
@@ -29,15 +27,15 @@ export default function Contact({ settings }) {
   const { submit: onSubmit } = useWeb3Forms({
     access_key: apiKey,
     settings: {
-      from_name: "Wada Cds Template",
-      subject: "New Contact Message from Wada Cds Website"
+      from_name: "WADA CDs",
+      subject: "Contact Message from Wada Cds Website"
     },
-    onSuccess: (msg, data) => {
+    onSuccess: msg => {
       setIsSuccess(true);
       setMessage(msg);
       reset();
     },
-    onError: (msg, data) => {
+    onError: msg => {
       setIsSuccess(false);
       setMessage(msg);
     }
@@ -55,7 +53,7 @@ export default function Contact({ settings }) {
       <div className="my-10 grid md:grid-cols-2">
         <div className="my-10">
           <h2 className="text-2xl font-semibold dark:text-white">
-            Contact Wada Cds
+            Contact WADA CDs
           </h2>
           <p className="mt-5 max-w-sm">
             Have something to say? We are here to help. Fill up the
@@ -65,20 +63,22 @@ export default function Contact({ settings }) {
           <div className="mt-5">
             <div className="text-dark-600 mt-2 flex items-center space-x-2 dark:text-gray-400">
               <MapPinIcon className="h-4 w-4" />
-              <span>1734 Sanfransico, CA 93063</span>
+              <span>Muslim Community, Lokoja, Kogi State</span>
             </div>
             {settings?.email && (
               <div className="text-dark-600 mt-2 flex items-center space-x-2 dark:text-gray-400">
                 <EnvelopeIcon className="h-4 w-4" />
-                <a href={`mailto:${settings.email}`}>
-                  {settings.email}
+                <a href={`mailto:cleverakanimoh02@gmail.com`}>
+                  contact@wadacds.com
                 </a>
               </div>
             )}
             {settings?.phone && (
               <div className="text-dark-600 mt-2 flex items-center space-x-2 dark:text-gray-400">
                 <PhoneIcon className="h-4 w-4" />
-                <a href={`tel:${settings.phone}`}>{settings.phone}</a>
+                <a href={`tel:08113530038`}>
+                  {"(+234) 811 3530 038"}
+                </a>
               </div>
             )}
           </div>
