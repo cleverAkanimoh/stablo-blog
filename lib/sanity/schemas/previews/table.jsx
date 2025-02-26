@@ -1,6 +1,4 @@
 const TablePreview = ({ table }) => {
-  console.log("eee", table);
-
   if (!table) {
     return <p>Table: Add Values</p>;
   }
@@ -21,8 +19,8 @@ const TablePreview = ({ table }) => {
       <tbody>
         {rows.map((row, index) => (
           <tr key={index}>
-            {row.cells.map((cell, index) => {
-              return <td key={cell}>{cell}</td>;
+            {row.cells.map((cell, idx) => {
+              return <td key={idx}>{cell}</td>;
             })}
           </tr>
         ))}

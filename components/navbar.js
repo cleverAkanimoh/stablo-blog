@@ -86,7 +86,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        Wada Cds
                       </span>
                     )}
                   </Link>
@@ -100,7 +100,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        Wada Cds
                       </span>
                     )}
                   </Link>
