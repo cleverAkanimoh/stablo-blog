@@ -48,11 +48,14 @@ importers:
         specifier: ^1.1.3
         version: 1.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
-        specifier: ^2.1.0
+        specifier: ^2.1.1
         version: 2.1.1
       date-fns:
         specifier: ^3.3.1
         version: 3.6.0
+      framer-motion:
+        specifier: ^12.4.7
+        version: 12.4.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       get-video-id:
         specifier: ^3.6.5
         version: 3.7.0
@@ -83,6 +86,9 @@ importers:
       react-iframe:
         specifier: ^1.8.5
         version: 1.8.5(react@18.3.1)
+      react-marquee-slider:
+        specifier: ^1.1.5
+        version: 1.1.5(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       react-refractor:
         specifier: ^2.1.7
         version: 2.2.0(react@18.3.1)
@@ -5080,6 +5086,11 @@ packages:
 
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-marquee-slider@1.1.5:
+    resolution: {integrity: sha512-eta0DSKMu8F+82O3zF4jlWdTTlsmJg3h8n12trqCndBYo5DAc07odVlfxSfSsEGcBEHYli12RehrK3EYc4LwrQ==}
+    peerDependencies:
+      styled-components: '>=4.0.0'
 
   react-photo-album@2.3.0:
     resolution: {integrity: sha512-CU+UMK4ZQHIoPZ672TSst9loKE5bxy6w0+bf7bY4XOw1g1C7+VdDWCW+wD8wPpbg2ve38QBTS73HVe6xYLAQ3w==}
@@ -11664,6 +11675,10 @@ snapshots:
   react-is@18.2.0: {}
 
   react-is@18.3.1: {}
+
+  react-marquee-slider@1.1.5(styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+    dependencies:
+      styled-components: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   react-photo-album@2.3.0(react@18.3.1):
     dependencies:

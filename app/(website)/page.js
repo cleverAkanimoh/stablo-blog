@@ -1,6 +1,7 @@
-import HomePage from "./home";
+import HomePage from "./components/home";
 import { getAllPosts } from "@/lib/sanity/client";
-import WelcomePage from "./welcome";
+import WelcomePage from "./components/welcome";
+import Partners from "./components/partners";
 
 export default async function IndexPage() {
   const posts = await getAllPosts();
@@ -8,6 +9,7 @@ export default async function IndexPage() {
   return (
     <>
       <WelcomePage />
+      <Partners />
       <HomePage posts={posts} />
     </>
   );

@@ -4,7 +4,7 @@ import { siteName } from "@/utils/config";
 
 function WelcomePage() {
   return (
-    <section className="xs:text-sm container flex min-h-72 items-center justify-center px-4">
+    <section className="xs:text-sm container flex min-h-56 items-center justify-center">
       <div className="max-w-screen-sm">
         <Text className="text-3xl lg:text-4xl">
           Welcome to {siteName} website, Lokoja,

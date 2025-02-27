@@ -58,7 +58,7 @@ export default async function Layout({ children }) {
     <>
       <Navbar {...settings} />
 
-      <main>{children}</main>
+      <main className="space-y-8">{children}</main>
 
       <Footer />
     </>
