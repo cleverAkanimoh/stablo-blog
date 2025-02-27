@@ -10,6 +10,7 @@ function WelcomePage() {
         <AnimatedText
           slideDirection="down"
           effect="slide"
+          duration={1}
           className="text-3xl lg:text-4xl"
           text={`Welcome to War Against Drug Abuse CDs website, Lokoja,
           Kogi State.`}
@@ -23,7 +24,7 @@ function WelcomePage() {
           <CustomLink variant="solid" href="/about">
             Read about us
           </CustomLink>
-          <CustomLink variant="outline" href="/activities">
+          <CustomLink variant="outline" href="/archive">
             Follow our activities
           </CustomLink>
         </div>
