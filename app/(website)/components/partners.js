@@ -8,8 +8,13 @@ import Marquee from "react-marquee-slider";
 
 function Partners() {
   return (
-    <section className="container max-w-screen-md space-y-6 md:text-center">
-      <Text className="text-3xl font-medium">Our Partners</Text>
+    <section className="container space-y-6 md:text-center">
+      <div>
+        <Text className="text-3xl font-medium">Our Sponsors</Text>
+        <small className="text-gray-400">
+          We are proud to be associated with these organizations
+        </small>
+      </div>
 
       <motion.section
         initial={{ opacity: 0, height: 0 }}
@@ -27,13 +32,13 @@ const PartnerLogo = ({ src, href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="transition-transform duration-300 hover:scale-110">
+      className="shrink-0 transition-transform duration-300 hover:scale-110">
       <Image
         src={src}
         alt="Partners"
         width={200}
         height={200}
-        className="xs:h-3/6 mx-4 aspect-auto h-40 w-fit md:w-2/3 lg:h-[120px]"
+        className="xs:h-3/6 mx-4 aspect-auto h-32 w-fit sm:h-40"
       />
     </a>
   );
