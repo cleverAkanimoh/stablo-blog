@@ -20,7 +20,7 @@ export const PREVIEWABLE_DOCUMENT_TYPES: string[] = ["post"];
 
 export default defineConfig({
   name: "default",
-  title: "Wada Cds Template",
+  title: "Wada CDS",
   basePath: "/studio",
   projectId: projectId,
   dataset: dataset,
