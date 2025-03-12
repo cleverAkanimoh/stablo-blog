@@ -10,12 +10,12 @@ async function sharedMetaData(params) {
     // enable this for resolving opengraph image
     // metadataBase: new URL(settings.url),
     title: {
-      default: settings?.title || "WADA - Blog",
+      default: settings?.title || "War Against Drug Abuse",
       template: "%s | WADA CDS"
     },
     description:
       settings?.description ||
-      "War against drug abuse Community Development Service",
+      "War against drug abuse Community Development Service Lokoja, Kogi State. Nigeria",
     keywords: [
       "drug",
       "Sanity",

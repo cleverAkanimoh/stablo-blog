@@ -2,7 +2,7 @@ import { cx } from "@/utils/all";
 
 export default function Container(props) {
   return (
-    <div
+    <section
       className={cx(
         "container px-8 mx-auto xl:px-5",
         props.large ? " max-w-screen-xl" : " max-w-screen-lg",
@@ -10,6 +10,6 @@ export default function Container(props) {
         props.className
       )}>
       {props.children}
-    </div>
+    </section>
   );
 }

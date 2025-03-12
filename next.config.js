@@ -9,7 +9,8 @@ const nextConfig = {
       { hostname: "cdn.sanity.io" },
       { hostname: "son.gov.ng" },
       { hostname: "ndleahelpline.com.ng" },
-      { hostname: "nafdac.gov.ng" }
+      { hostname: "nafdac.gov.ng" },
+      { hostname: "res.cloudinary.com" }
     ]
   },
   typescript: {

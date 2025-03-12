@@ -33,7 +33,7 @@ export default function Navbar(props) {
     },
     {
       label: "Activities",
-      href: "/archive"
+      href: "/activity"
     }
   ];
 

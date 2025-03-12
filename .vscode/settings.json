@@ -2,6 +2,13 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
+    "excos",
+    "headlessui",
+    "Kogi",
+    "leftmenu",
+    "Lokoja",
+    "mobilemenu",
+    "rightmenu",
     "wada"
   ]
 }
