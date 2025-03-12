@@ -70,7 +70,7 @@ export default function About({ authors, settings }) {
 
       {/* Mission & Vision Section */}
       <section className="prose mx-auto mt-14 text-center dark:prose-invert">
-        <section className="w-full max-w-4xl space-y-6">
+        <section className=" w-full max-w-4xl space-y-6">
           {["Our Mission", "Our Vision"].map((title, index) => (
             <motion.div
               key={index}
@@ -83,7 +83,7 @@ export default function About({ authors, settings }) {
                     <Disclosure.Button className="flex w-full items-center justify-between text-left text-lg font-semibold text-gray-800 dark:text-gray-100">
                       {title}
                       <ChevronUpIcon
-                        className={`h-6 w-6 transform transition-transform duration-300 ${
+                        className={`size-6 transform transition-transform duration-300 ${
                           open ? "rotate-180" : ""
                         }`}
                       />

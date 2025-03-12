@@ -5,10 +5,8 @@ import { Menu, Transition, Disclosure } from "@headlessui/react";
 import Container from "@/components/container";
 import Link from "next/link";
 import Image from "next/image";
-import { urlForImage } from "@/lib/sanity/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { siteName } from "@/utils/config";
 
 export default function Navbar(props) {
   const leftmenu = [
@@ -70,32 +68,24 @@ export default function Navbar(props) {
                 </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
                   <Link href="/" className="w-28 dark:hidden">
-                    {props.logo ? (
-                      <Image
-                        {...urlForImage(props.logo)}
+                    <Image
+                        src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
                         alt="Logo"
                         priority={true}
+                        width="50"
+                        height="50"
                         sizes="(max-width: 640px) 100vw, 200px"
                       />
-                    ) : (
-                      <span className="block text-center">
-                        {siteName}
-                      </span>
-                    )}
                   </Link>
                   <Link href="/" className="hidden w-28 dark:block">
-                    {props.logoalt ? (
-                      <Image
-                        {...urlForImage(props.logoalt)}
+                    <Image
+                        src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
+                        width="50"
+                        height="50"
                         alt="Logo"
                         priority={true}
                         sizes="(max-width: 640px) 100vw, 200px"
                       />
-                    ) : (
-                      <span className="block text-center">
-                        {siteName}
-                      </span>
-                    )}
                   </Link>
                   <Disclosure.Button
                     aria-label="Toggle Menu"
