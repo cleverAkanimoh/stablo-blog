@@ -1,7 +1,6 @@
 import { apiVersion, dataset, projectId, useCdn } from "./config";
 import {
   postquery,
-  limitquery,
   paginatedquery,
   configQuery,
   singlequery,
@@ -13,7 +12,8 @@ import {
   catpathquery,
   catquery,
   getAll,
-  searchquery
+  allActivitiesQuery,
+  singleActivityQuery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -23,9 +23,6 @@ if (!projectId) {
   );
 }
 
-/**
- * Checks if it's safe to create a client instance, as `@sanity/client` will throw an error if `projectId` is false
- */
 const client = projectId
   ? createClient({ projectId, dataset, apiVersion, useCdn })
   : null;
@@ -44,6 +41,20 @@ export const fetcher = async ([query, params]) => {
     }
   }
 })();
+
+export async function getAllActivities() {
+  if (client) {
+    return (await client.fetch(allActivitiesQuery)) || [];
+  }
+  return [];
+}
+
+export async function getActivityById(id: string) {
+  if (client) {
+    return (await client.fetch(singleActivityQuery, { id })) || {};
+  }
+  return {};
+}
 
 export async function getAllPosts() {
   if (client) {
