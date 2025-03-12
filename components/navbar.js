@@ -67,24 +67,24 @@ export default function Navbar(props) {
                   ))}
                 </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
-                  <Link href="/" className="w-28 dark:hidden">
+                  <Link href="/" className="dark:hidden">
                     <Image
                         src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
                         alt="Logo"
                         priority={true}
                         width="50"
                         height="50"
-                        sizes="(max-width: 640px) 100vw, 200px"
+                        className="size-12"
                       />
                   </Link>
-                  <Link href="/" className="hidden w-28 dark:block">
+                  <Link href="/" className="hidden dark:block">
                     <Image
                         src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
                         width="50"
                         height="50"
                         alt="Logo"
                         priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
+                        className="size-12"
                       />
                   </Link>
                   <Disclosure.Button

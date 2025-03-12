@@ -12,7 +12,7 @@ export default function About({ authors, settings }) {
   return (
     <Container>
       <motion.div
-        className="max-w-3xl text-center"
+        className="max-w-3xl mx-auto text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}>
