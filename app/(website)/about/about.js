@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function About({ authors, settings }) {
+export default function About() {
   return (
     <Container>
       <motion.div
