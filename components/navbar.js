@@ -8,7 +8,7 @@ import Image from "next/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
-export default function Navbar(props) {
+export default function Navbar() {
   const leftmenu = [
     {
       label: "Home",
