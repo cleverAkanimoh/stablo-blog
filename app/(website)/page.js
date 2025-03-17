@@ -1,5 +1,5 @@
 import HomePage from "./components/home";
-import { getAllPosts } from "@/lib/sanity/client";
+import { getAllPosts,getAllActivities } from "@/lib/sanity/client";
 import WelcomePage from "./components/welcome";
 import Partners from "./components/partners";
 import ActivitySlider from "./activity/components/ActivitySlider";
