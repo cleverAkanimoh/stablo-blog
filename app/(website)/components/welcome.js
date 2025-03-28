@@ -1,7 +1,5 @@
 import { AnimatedText } from "@/components/animatedText";
 import CustomLink from "@/components/custom/link";
-import Text from "@/components/custom/text";
-import { siteName } from "@/utils/config";
 
 function WelcomePage() {
   return (
@@ -17,7 +15,7 @@ function WelcomePage() {
         />
 
         <small className="block text-sm text-gray-400">
-          some text about what we do in wada cds
+          say no to drug abuse...
         </small>
 
         <div className="mt-4 flex flex-wrap items-center gap-4">

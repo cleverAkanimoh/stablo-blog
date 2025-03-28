@@ -6,8 +6,6 @@ import Navbar from "@/components/navbar";
 async function sharedMetaData() {
 
   return {
-    // enable this for resolving opengraph image
-    // metadataBase: new URL(settings.url),
     title: {
       default: "War Against Drug Abuse",
       template: "%s | WADA CDS"
