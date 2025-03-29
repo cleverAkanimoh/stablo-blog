@@ -10,8 +10,8 @@ function WelcomePage() {
           effect="slide"
           duration={1}
           className="text-3xl lg:text-4xl"
-          text={`Welcome to War Against Drug Abuse CDs website, Lokoja,
-          Kogi State.`}
+          text="Welcome to War Against Drug Abuse CDs website, Lokoja,
+          Kogi State"
         />
 
         <small className="block text-sm text-gray-400">
