@@ -76,7 +76,7 @@ export default function Navbar() {
                         priority={true}
                         width="50"
                         height="50"
-                        className="size-12"
+                        className="size-10"
                       />
                     </Link>
 
@@ -86,7 +86,7 @@ export default function Navbar() {
                       height="50"
                       alt="Logo"
                       priority={true}
-                      className="size-12"
+                      className="size-10"
                     />
                   </div>
                   <Disclosure.Button
