@@ -17,22 +17,21 @@ export default function ActivitySlider({ activities }) {
   }, []);
 
   return (
-    <section className="y-6 container space-y-4">
+    <section className="y-6 container space-y-4 md:text-center">
       <div className="">
         <Text className="text-3xl font-medium">
           Recent Activities
         </Text>
 
-        <p>
-          <small>
-            Browse through a slideshow of our most recent activities.
-          </small>{" "}
+        <small>
+          Browse through a slideshow of our most{" "}
           <Link
             href="/activity"
-            className="text-xs text-red-600 transition-all duration-300 hover:text-black dark:hover:text-white">
-            See all activities
+            className="text-red-600 transition-all duration-300 hover:text-black dark:hover:text-white">
+            recent activities
           </Link>
-        </p>
+          .
+        </small>
       </div>
 
       {loaded ? (
