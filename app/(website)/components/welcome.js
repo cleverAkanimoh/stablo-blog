@@ -22,7 +22,7 @@ function WelcomePage() {
           <CustomLink variant="solid" href="/about">
             Read about us
           </CustomLink>
-          <CustomLink variant="outline" href="/archive">
+          <CustomLink variant="outline" href="/activity">
             Follow our activities
           </CustomLink>
         </div>

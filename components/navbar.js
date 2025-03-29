@@ -8,6 +8,11 @@ import Image from "next/image";
 import cx from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
+const logoUrl =
+  "https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png";
+const nyscLogo =
+  "https://res.cloudinary.com/drrdicytq/image/upload/v1743209223/nysc_logo_yl8cfr.png";
+
 export default function Navbar() {
   const leftmenu = [
     {
@@ -69,23 +74,23 @@ export default function Navbar() {
                 <div className="flex w-full items-center justify-between md:w-auto">
                   <Link href="/" className="dark:hidden">
                     <Image
-                        src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
-                        alt="Logo"
-                        priority={true}
-                        width="50"
-                        height="50"
-                        className="size-12"
-                      />
+                      src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
+                      alt="Logo"
+                      priority={true}
+                      width="50"
+                      height="50"
+                      className="size-12"
+                    />
                   </Link>
                   <Link href="/" className="hidden dark:block">
                     <Image
-                        src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
-                        width="50"
-                        height="50"
-                        alt="Logo"
-                        priority={true}
-                        className="size-12"
-                      />
+                      src="https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png"
+                      width="50"
+                      height="50"
+                      alt="Logo"
+                      priority={true}
+                      className="size-12"
+                    />
                   </Link>
                   <Disclosure.Button
                     aria-label="Toggle Menu"

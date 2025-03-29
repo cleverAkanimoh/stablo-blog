@@ -4,10 +4,7 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import { deskTool } from "sanity/desk";
-import {
-  dataset,
-  projectId
-} from "./lib/sanity/config";
+import { dataset, projectId } from "./lib/sanity/config";
 import {
   pageStructure,
   singletonPlugin
