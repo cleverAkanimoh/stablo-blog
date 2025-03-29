@@ -37,7 +37,7 @@ export default function ActivitySlider({ activities }) {
       {loaded ? (
         <Marquee
           velocity={20}
-          direction={"ltr"}
+          direction="ltr"
           scatterRandomly={false}
           resetAfterTries={0}
           onInit={() => {}}
