@@ -1,21 +1,30 @@
 "use client";
 
-import Marquee from "react-marquee-slider";
-import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import Marquee from "react-marquee-slider";
 import ActivityModal from "./ActivityModal";
 
-export default function ActivitySlider({activities}) {
+export default function ActivitySlider({ activities }) {
   const [selectedActivity, setSelectedActivity] = useState(null);
 
   return (
-    <div className="w-full bg-gray-50 py-6 dark:bg-gray-900">
-      <h2 className="text-center text-2xl font-bold text-gray-900 dark:text-gray-100">
-        Recent Activities
-      </h2>
+    <div className="y-6 w-full space-y-4">
+      <div className="container flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+          Recent Activities
+        </h2>
+
+        <Link
+          href="/activity"
+          className="text-sm text-gray-400 transition-all duration-300 hover:text-black">
+          All activities
+        </Link>
+      </div>
 
       <Marquee
-        velocity={30}
+        velocity={10}
         direction={"ltr"}
         scatterRandomly={false}
         resetAfterTries={0}
