@@ -7,6 +7,7 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     remotePatterns: [
       { hostname: "cdn.sanity.io" },
+      { hostname: "upload.wikimedia.org" },
       { hostname: "son.gov.ng" },
       { hostname: "ndleahelpline.com.ng" },
       { hostname: "nafdac.gov.ng" },

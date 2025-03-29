@@ -35,8 +35,10 @@ export default function ActivitySlider({ activities }) {
           return (
             <div
               key={index}
-              className="mx-4 w-full cursor-pointer rounded-md bg-white p-4 shadow-lg dark:bg-gray-900"
-              onClick={() => setSelectedActivity(activity)}>
+              className="mx-4 max-w-[350px] cursor-pointer rounded-md bg-white p-4 shadow-lg dark:bg-gray-900"
+              onClick={() => {
+                setSelectedActivity(activity);
+              }}>
               <Image
                 src={urlFor(activity.images[0].asset)}
                 height="100"
@@ -44,7 +46,7 @@ export default function ActivitySlider({ activities }) {
                 alt={activity.title}
                 className="h-56 w-full rounded-md object-cover"
               />
-              <p className="mt-2 truncate text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <p className="mt-2  truncate text-lg font-semibold text-gray-900 dark:text-gray-100">
                 {activity.title}
               </p>
             </div>

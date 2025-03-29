@@ -1,12 +1,16 @@
 "use client";
 
 import { urlFor } from "@/lib/generateSanityUrl";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ActivityModal from "./ActivityModal";
 
 export default function Activities({ activities }) {
   const [selectedActivity, setSelectedActivity] = useState(null);
+
+  const router = useRouter();
 
   return (
     <main className="container min-h-screen p-6">
@@ -18,21 +22,31 @@ export default function Activities({ activities }) {
       </p>
 
       <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {(activities || []).map((activity, index) => {
-          console.log(activity);
-
+        {(activities || []).map(activity => {
           return (
-            <div
-              key={index}
+            <motion.div
+              key={activity._id}
+              id={activity._id}
               className="cursor-pointer rounded-lg bg-white p-4 shadow dark:bg-gray-800"
-              onClick={() => setSelectedActivity(activity)}>
-              <Image
-                height="100"
-                width="100"
-                src={urlFor(activity.images[0])}
-                alt={activity.title}
-                className="h-48 w-full rounded-lg object-cover"
-              />
+              onClick={() => {
+                router.push("?activity=" + activity._id);
+                setSelectedActivity(activity);
+              }}>
+              <motion.div
+                className="h-56 w-full overflow-hidden rounded-lg"
+                whileHover={{
+                  x: -10,
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}>
+                <Image
+                  height="100"
+                  width="100"
+                  src={urlFor(activity.images[0])}
+                  alt={activity.title}
+                  className="h-full w-full object-cover"
+                />
+              </motion.div>
               <h2 className="mt-3 text-lg font-semibold text-gray-900 dark:text-gray-100">
                 {activity.title}
               </h2>
@@ -42,7 +56,7 @@ export default function Activities({ activities }) {
               <button className="mt-2 text-red-600 underline dark:text-red-400">
                 See More
               </button>
-            </div>
+            </motion.div>
           );
         })}
       </div>
