@@ -1,12 +1,12 @@
 "use client";
 
-import { Fragment } from "react";
-import { Menu, Transition, Disclosure } from "@headlessui/react";
 import Container from "@/components/container";
-import Link from "next/link";
-import Image from "next/image";
-import cx from "clsx";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import cx from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import { Fragment } from "react";
 
 const logoUrl =
   "https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png";
@@ -17,12 +17,12 @@ const menus = {
   left: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "/contact" }
   ],
   right: [
     { label: "Archive", href: "/archive" },
-    { label: "Activities", href: "/activity" },
-  ],
+    { label: "Activities", href: "/activity" }
+  ]
 };
 
 export default function Navbar() {
@@ -32,20 +32,23 @@ export default function Navbar() {
     menuItems.map((item, index) => (
       <Fragment key={`${item.label}${index}`}>
         {item.children && item.children.length > 0 ? (
-          <DropdownMenu menu={item} items={item.children} mobile={isMobile} />
+          <DropdownMenu
+            menu={item}
+            items={item.children}
+            mobile={isMobile}
+          />
         ) : (
           <Link
             href={item.href}
             className={cx(
               isMobile ? "w-full px-5 py-2" : "px-5 py-2",
-              "text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+              "text-sm font-medium text-gray-600 hover:text-red-500 dark:text-gray-400"
             )}
             target={item.external ? "_blank" : ""}
-            rel={item.external ? "noopener" : ""}
-          >
+            rel={item.external ? "noopener" : ""}>
             {item.label}
             {item.badge && (
-              <span className="ml-2 rounded bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-600 dark:bg-cyan-200 dark:text-blue-800">
+              <span className="ml-2 rounded bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-600 dark:bg-cyan-200 dark:text-red-800">
                 {item.badge}
               </span>
             )}
@@ -65,19 +68,19 @@ export default function Navbar() {
                   {renderMenuItems(menus.left)}
                 </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
-                 <div className="flex items-center divide-x gap-2"> 
-                  <Link href="/">
+                  <div className="flex items-center gap-2 divide-x">
+                    <Link href="/">
+                      <Image
+                        src={logoUrl}
+                        alt="Logo"
+                        priority={true}
+                        width="50"
+                        height="50"
+                        className="size-12"
+                      />
+                    </Link>
+
                     <Image
-                      src={logoUrl}
-                      alt="Logo"
-                      priority={true}
-                      width="50"
-                      height="50"
-                      className="size-12"
-                    />
-                  </Link>
-                  
-                  <Image
                       src={nyscLogo}
                       width="50"
                       height="50"
@@ -85,16 +88,14 @@ export default function Navbar() {
                       priority={true}
                       className="size-12"
                     />
-                    </div>
+                  </div>
                   <Disclosure.Button
                     aria-label="Toggle Menu"
-                    className="ml-auto rounded-md px-2 py-1 text-gray-500 focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden"
-                  >
+                    className="ml-auto rounded-md px-2 py-1 text-gray-500 focus:text-red-500 focus:outline-none dark:text-gray-300 md:hidden">
                     <svg
                       className="h-6 w-6 fill-current"
                       xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                    >
+                      viewBox="0 0 24 24">
                       {open ? (
                         <path
                           fillRule="evenodd"
@@ -129,18 +130,19 @@ export default function Navbar() {
 
 const DropdownMenu = ({ menu, items, mobile }) => {
   return (
-    <Menu as="div" className={cx("relative text-left", mobile && "w-full")}>
+    <Menu
+      as="div"
+      className={cx("relative text-left", mobile && "w-full")}>
       {({ open }) => (
         <>
           <Menu.Button
             className={cx(
               "flex items-center gap-x-1 rounded-md px-5 py-2 text-sm font-medium outline-none transition-all focus:outline-none focus-visible:text-indigo-500 focus-visible:ring-1 dark:focus-visible:bg-gray-800",
               open
-                ? "text-blue-500 hover:text-blue-500"
+                ? "text-red-500 hover:text-red-500"
                 : "text-gray-600 dark:text-gray-400",
               mobile ? "w-full px-4 py-2" : "inline-block px-4 py-2"
-            )}
-          >
+            )}>
             <span>{menu.label}</span>
             <ChevronDownIcon className="mt-0.5 h-4 w-4" />
           </Menu.Button>
@@ -151,14 +153,12 @@ const DropdownMenu = ({ menu, items, mobile }) => {
             enterTo="lg:transform lg:opacity-100 lg:scale-100"
             leave="lg:transition lg:ease-in lg:duration-75"
             leaveFrom="lg:transform lg:opacity-100 lg:scale-100"
-            leaveTo="lg:transform lg:opacity-0 lg:scale-95"
-          >
+            leaveTo="lg:transform lg:opacity-0 lg:scale-95">
             <Menu.Items
               className={cx(
                 "z-20 origin-top-left rounded-md focus:outline-none lg:absolute lg:left-0 lg:w-56",
                 !mobile && "bg-white shadow-lg dark:bg-gray-800"
-              )}
-            >
+              )}>
               <div className={cx(!mobile && "py-3")}>
                 {items.map((item, index) => (
                   <Menu.Item as="div" key={`${item.title}${index}`}>
@@ -168,10 +168,9 @@ const DropdownMenu = ({ menu, items, mobile }) => {
                         className={cx(
                           "flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4",
                           active
-                            ? "text-blue-500"
-                            : "text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300"
-                        )}
-                      >
+                            ? "text-red-500"
+                            : "text-gray-700 hover:text-red-500 focus:text-red-500 dark:text-gray-300"
+                        )}>
                         <span>{item.title}</span>
                       </Link>
                     )}
