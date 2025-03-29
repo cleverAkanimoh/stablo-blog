@@ -42,7 +42,7 @@ export default function ActivitySlider({ activities }) {
           resetAfterTries={0}
           onInit={() => {}}
           onFinish={tries => tries}>
-          {activities.map((activity, index) => {
+          {activities.slice(0, 10).map((activity, index) => {
             return (
               <div
                 key={index}
