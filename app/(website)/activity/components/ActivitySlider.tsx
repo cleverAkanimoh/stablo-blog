@@ -1,5 +1,6 @@
 "use client";
 
+import { urlFor } from "@/lib/generateSanityUrl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -18,7 +19,7 @@ export default function ActivitySlider({ activities }) {
 
         <Link
           href="/activity"
-          className="text-sm text-gray-400 transition-all duration-300 hover:text-black">
+          className="text-sm text-gray-400 transition-all duration-300 hover:text-black dark:hover:text-white">
           All activities
         </Link>
       </div>
@@ -29,24 +30,26 @@ export default function ActivitySlider({ activities }) {
         scatterRandomly={false}
         resetAfterTries={0}
         onInit={() => {}}
-        onFinish={tries => console.log(tries)}>
-        {activities.map((activity, index) => (
-          <div
-            key={index}
-            className="mx-4 cursor-pointer rounded-lg bg-white p-4 shadow-lg dark:bg-gray-800"
-            onClick={() => setSelectedActivity(activity)}>
-            <Image
-              src={activity.images[0]}
-              height="100"
-              width="100"
-              alt={activity.title}
-              className="h-40 w-64 rounded-lg object-cover"
-            />
-            <p className="mt-2 text-lg font-semibold text-gray-900 dark:text-gray-100">
-              {activity.title}
-            </p>
-          </div>
-        ))}
+        onFinish={tries => tries}>
+        {activities.map((activity, index) => {
+          return (
+            <div
+              key={index}
+              className="mx-4 w-full cursor-pointer rounded-md bg-white p-4 shadow-lg dark:bg-gray-900"
+              onClick={() => setSelectedActivity(activity)}>
+              <Image
+                src={urlFor(activity.images[0].asset)}
+                height="100"
+                width="100"
+                alt={activity.title}
+                className="h-56 w-full rounded-md object-cover"
+              />
+              <p className="mt-2 truncate text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {activity.title}
+              </p>
+            </div>
+          );
+        })}
       </Marquee>
 
       {selectedActivity && (

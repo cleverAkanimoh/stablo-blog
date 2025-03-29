@@ -1,21 +1,21 @@
+import { createClient } from "next-sanity";
 import { apiVersion, dataset, projectId, useCdn } from "./config";
 import {
-  postquery,
-  paginatedquery,
-  configQuery,
-  singlequery,
-  pathquery,
+  allActivitiesQuery,
   allauthorsquery,
   authorsquery,
-  postsbyauthorquery,
-  postsbycatquery,
   catpathquery,
   catquery,
+  configQuery,
   getAll,
-  allActivitiesQuery,
-  singleActivityQuery
+  paginatedquery,
+  pathquery,
+  postquery,
+  postsbyauthorquery,
+  postsbycatquery,
+  singleActivityQuery,
+  singlequery
 } from "./groq";
-import { createClient } from "next-sanity";
 
 if (!projectId) {
   console.error(
@@ -23,7 +23,7 @@ if (!projectId) {
   );
 }
 
-const client = projectId
+export const client = projectId
   ? createClient({ projectId, dataset, apiVersion, useCdn })
   : null;
 
