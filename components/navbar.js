@@ -4,6 +4,7 @@ import Container from "@/components/container";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import cx from "clsx";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -38,21 +39,30 @@ export default function Navbar() {
             mobile={isMobile}
           />
         ) : (
-          <Link
-            href={item.href}
-            className={cx(
-              isMobile ? "w-full px-5 py-2" : "px-5 py-2",
-              "text-sm font-medium text-gray-600 hover:text-red-500 dark:text-gray-400"
-            )}
-            target={item.external ? "_blank" : ""}
-            rel={item.external ? "noopener" : ""}>
-            {item.label}
-            {item.badge && (
-              <span className="ml-2 rounded bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-600 dark:bg-cyan-200 dark:text-red-800">
-                {item.badge}
-              </span>
-            )}
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20
+            }}>
+            <Link
+              href={item.href}
+              className={cx(
+                isMobile ? "w-full px-5 py-2" : "px-5 py-2",
+                "text-sm font-medium text-gray-600 hover:text-red-500 dark:text-gray-400"
+              )}
+              target={item.external ? "_blank" : ""}
+              rel={item.external ? "noopener" : ""}>
+              {item.label}
+              {item.badge && (
+                <span className="ml-2 rounded bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-600 dark:bg-cyan-200 dark:text-red-800">
+                  {item.badge}
+                </span>
+              )}
+            </Link>
+          </motion.div>
         )}
       </Fragment>
     ));
@@ -92,23 +102,26 @@ export default function Navbar() {
                   <Disclosure.Button
                     aria-label="Toggle Menu"
                     className="ml-auto rounded-md px-2 py-1 text-gray-500 focus:text-red-500 focus:outline-none dark:text-gray-300 md:hidden">
-                    <svg
+                    <motion.svg
                       className="h-6 w-6 fill-current"
                       xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24">
+                      viewBox="0 0 24 24"
+                      initial={{ rotate: 0 }}
+                      animate={{ rotate: open ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}>
                       {open ? (
-                        <path
+                        <motion.path
                           fillRule="evenodd"
                           clipRule="evenodd"
                           d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                         />
                       ) : (
-                        <path
+                        <motion.path
                           fillRule="evenodd"
-                          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z"
                         />
                       )}
-                    </svg>
+                    </motion.svg>
                   </Disclosure.Button>
                 </div>
                 <div className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
@@ -116,9 +129,14 @@ export default function Navbar() {
                 </div>
               </div>
               <Disclosure.Panel>
-                <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
-                  {renderMenuItems(mobileMenu, true)}
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}>
+                  <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
+                    {renderMenuItems(mobileMenu, true)}
+                  </div>
+                </motion.div>
               </Disclosure.Panel>
             </>
           )}
@@ -144,7 +162,12 @@ const DropdownMenu = ({ menu, items, mobile }) => {
               mobile ? "w-full px-4 py-2" : "inline-block px-4 py-2"
             )}>
             <span>{menu.label}</span>
-            <ChevronDownIcon className="mt-0.5 h-4 w-4" />
+            <motion.div
+              initial={{ rotate: 0 }}
+              animate={{ rotate: open ? 180 : 0 }}
+              transition={{ duration: 0.3 }}>
+              <ChevronDownIcon className="mt-0.5 h-4 w-4" />
+            </motion.div>
           </Menu.Button>
           <Transition
             as={Fragment}
@@ -159,24 +182,29 @@ const DropdownMenu = ({ menu, items, mobile }) => {
                 "z-20 origin-top-left rounded-md focus:outline-none lg:absolute lg:left-0 lg:w-56",
                 !mobile && "bg-white shadow-lg dark:bg-gray-800"
               )}>
-              <div className={cx(!mobile && "py-3")}>
-                {items.map((item, index) => (
-                  <Menu.Item as="div" key={`${item.title}${index}`}>
-                    {({ active }) => (
-                      <Link
-                        href={item?.path ? item.path : "#"}
-                        className={cx(
-                          "flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4",
-                          active
-                            ? "text-red-500"
-                            : "text-gray-700 hover:text-red-500 focus:text-red-500 dark:text-gray-300"
-                        )}>
-                        <span>{item.title}</span>
-                      </Link>
-                    )}
-                  </Menu.Item>
-                ))}
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}>
+                <div className={cx(!mobile && "py-3")}>
+                  {items.map((item, index) => (
+                    <Menu.Item as="div" key={`${item.title}${index}`}>
+                      {({ active }) => (
+                        <Link
+                          href={item?.path ? item.path : "#"}
+                          className={cx(
+                            "flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4",
+                            active
+                              ? "text-red-500"
+                              : "text-gray-700 hover:text-red-500 focus:text-red-500 dark:text-gray-300"
+                          )}>
+                          <span>{item.title}</span>
+                        </Link>
+                      )}
+                    </Menu.Item>
+                  ))}
+                </div>
+              </motion.div>
             </Menu.Items>
           </Transition>
         </>
