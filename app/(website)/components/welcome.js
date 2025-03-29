@@ -15,7 +15,7 @@ function WelcomePage() {
         />
 
         <small className="block text-sm text-gray-400">
-          say no to drug abuse...
+          say no to drug abuse
         </small>
 
         <div className="mt-4 flex flex-wrap items-center gap-4">
