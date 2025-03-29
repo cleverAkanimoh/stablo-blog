@@ -1,12 +1,12 @@
 import HomePage from "./components/home";
-import { getAllPosts,getAllActivities } from "@/lib/sanity/client";
+import { getAllPosts, getAllActivities } from "@/lib/sanity/client";
 import WelcomePage from "./components/welcome";
 import Partners from "./components/partners";
 import ActivitySlider from "./activity/components/ActivitySlider";
 
 export default async function IndexPage() {
   const posts = await getAllPosts();
-    const activities = await getAllActivities();
+  const activities = await getAllActivities();
 
   return (
     <>
