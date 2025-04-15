@@ -11,7 +11,7 @@ export default async function IndexPage() {
   return (
     <>
       <WelcomePage />
-      <Partners />
+      {/* <Partners /> */}
       <ActivitySlider activities={activities} />
       <HomePage posts={posts} />
     </>
