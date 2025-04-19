@@ -6,6 +6,7 @@ export const projectId =
 
 export const dataset =
   process.env.NEXT_PUBLIC_SANITY_DATASET || ("production" as string);
+  
 
 export const apiVersion =
   process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2023-03-25";
