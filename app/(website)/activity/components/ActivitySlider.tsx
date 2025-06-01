@@ -51,7 +51,7 @@ export default function ActivitySlider({ activities }) {
                   setSelectedActivity(activity);
                 }}>
                 <Image
-                  src={urlFor(activity.images[0].asset)}
+                  src={urlFor(activity.images?.[0].asset)} //
                   height="100"
                   width="100"
                   alt={activity.title}
