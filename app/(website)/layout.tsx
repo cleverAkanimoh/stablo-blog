@@ -5,11 +5,11 @@ import { siteUrl } from "@/utils/config";
 async function sharedMetaData() {
   return {
     title: {
-      default: "War Against Drug Abuse CDS – Lokoja",
-      template: "%s | WADA CDS – Community Health Initiative"
+      default: "War Against Drug Abuse CDS - Lokoja",
+      template: "%s | WADA CDS - Community Health Initiative"
     },
     description:
-      "Join the War Against Drug Abuse (WADA CDS) – a community-driven health and wellness initiative in Lokoja, Kogi State, Nigeria. Empowering youth, promoting sanity, and building a drug-free society.",
+      "Join the War Against Drug Abuse (WADA CDS) - a community-driven health and wellness initiative in Lokoja, Kogi State, Nigeria. Empowering youth, promoting sanity, and building a drug-free society.",
     keywords: [
       "War Against Drug Abuse",
       "WADA",
@@ -28,14 +28,13 @@ async function sharedMetaData() {
     creator: "War Against Drug Abuse CDS Team",
     publisher: "War Against Drug Abuse CDS",
     metadataBase: new URL(siteUrl),
-
     openGraph: {
       type: "website",
       locale: "en_NG",
       url: siteUrl,
-      siteName: "War Against Drug Abuse CDS – Lokoja",
+      siteName: "War Against Drug Abuse CDS - Lokoja",
       title:
-        "War Against Drug Abuse CDS – Empowering Communities for a Drug-Free Future",
+        "War Against Drug Abuse CDS - Empowering Communities for a Drug-Free Future",
       description:
         "A youth-led movement committed to community health, drug prevention education, and social development in Kogi State.",
       images: [
@@ -43,14 +42,14 @@ async function sharedMetaData() {
           url: "/img/opengraph.png",
           width: 1200,
           height: 630,
-          alt: "War Against Drug Abuse CDS – Lokoja, Nigeria"
+          alt: "War Against Drug Abuse CDS - Lokoja, Nigeria"
         }
       ]
     },
 
     twitter: {
       card: "summary_large_image",
-      title: "War Against Drug Abuse CDS – Lokoja",
+      title: "War Against Drug Abuse CDS - Lokoja",
       description:
         "Join our mission to create a drug-free, healthy community in Kogi State. Youth-led, impact-driven.",
       images: ["/img/opengraph.png"]
