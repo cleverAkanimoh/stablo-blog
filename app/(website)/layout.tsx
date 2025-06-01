@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { siteUrl } from "@/utils/config";
 
 async function sharedMetaData() {
   return {
@@ -23,17 +24,15 @@ async function sharedMetaData() {
       "Community Service",
       "Drug Education"
     ],
-    authors: [
-      { name: "Clever Akanimoh", url: "https://yourdomain.com" }
-    ],
+    authors: [{ name: "Clever Akanimoh", url: siteUrl }],
     creator: "War Against Drug Abuse CDS Team",
     publisher: "War Against Drug Abuse CDS",
-    metadataBase: new URL("https://yourdomain.com"), // Replace with actual domain
+    metadataBase: new URL(siteUrl),
 
     openGraph: {
       type: "website",
       locale: "en_NG",
-      url: "https://yourdomain.com",
+      url: siteUrl,
       siteName: "War Against Drug Abuse CDS – Lokoja",
       title:
         "War Against Drug Abuse CDS – Empowering Communities for a Drug-Free Future",
