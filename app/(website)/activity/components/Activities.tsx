@@ -22,7 +22,7 @@ export default function Activities({ activities }) {
       </p>
 
       <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {(activities || []).map(activity => {
+        {(activities || [])?.map(activity => {
           return (
             <motion.div
               key={activity._id}

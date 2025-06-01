@@ -1,10 +1,7 @@
-import { getSettings } from "@/lib/sanity/client";
 import Footer from "@/components/footer";
-import { urlForImage } from "@/lib/sanity/image";
 import Navbar from "@/components/navbar";
 
 async function sharedMetaData() {
-
   return {
     title: {
       default: "War Against Drug Abuse",
@@ -25,8 +22,7 @@ async function sharedMetaData() {
     openGraph: {
       images: [
         {
-          url:
-            "/img/opengraph.jpg",
+          url: "/img/opengraph.png",
           width: 800,
           height: 600
         }
@@ -48,7 +44,6 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Layout({ children }) {
-
   return (
     <>
       <Navbar />
