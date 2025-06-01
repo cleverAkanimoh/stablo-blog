@@ -1,7 +1,7 @@
-import { Suspense } from "react";
 import Container from "@/components/container";
-import Archive from "./archive";
 import Loading from "@/components/loading";
+import { Suspense } from "react";
+import Archive from "./archive";
 
 export const dynamic = "force-dynamic";
 
@@ -29,4 +29,4 @@ export default async function ArchivePage({ searchParams }) {
   );
 }
 
-// export const revalidate = 60;
+export const revalidate = 60;
