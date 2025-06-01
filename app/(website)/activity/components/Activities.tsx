@@ -23,6 +23,7 @@ export default function Activities({ activities }) {
 
       <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {(activities || [])?.map(activity => {
+          console.log(activity.images);
           return (
             <motion.div
               key={activity._id}

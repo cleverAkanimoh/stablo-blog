@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "@/components/container";
+import { nyscLogo, siteLogo } from "@/utils/config";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import cx from "clsx";
@@ -9,10 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 
-const logoUrl =
-  "https://res.cloudinary.com/drrdicytq/image/upload/v1741798796/logo_a1t9pl.png";
-const nyscLogo =
-  "https://upload.wikimedia.org/wikipedia/commons/8/87/NYSC_LOGO.svg";
+const logoUrl = siteLogo;
 
 const menus = {
   left: [
