@@ -36,7 +36,7 @@ async function sharedMetaData() {
       title:
         "War Against Drug Abuse CDS - Empowering Communities for a Drug-Free Future",
       description:
-        "A youth-led movement committed to community health, drug prevention education, and social development in Kogi State.",
+        "A youth-led movement committed to community health, drug prevention education, and social development in Lokoja, Kogi State.",
       images: [
         {
           url: "/img/opengraph.png",
