@@ -42,7 +42,11 @@ export default function Activities({ activities }) {
                 <Image
                   height="100"
                   width="100"
-                  src={urlFor(activity.images[0])}
+                  src={
+                    activity.images && activity.images.length > 0
+                      ? urlFor(activity.images[0])
+                      : ""
+                  }
                   alt={activity.title}
                   className="h-full w-full object-cover"
                 />
