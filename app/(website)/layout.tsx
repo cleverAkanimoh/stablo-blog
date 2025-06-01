@@ -4,37 +4,68 @@ import Navbar from "@/components/navbar";
 async function sharedMetaData() {
   return {
     title: {
-      default: "War Against Drug Abuse",
-      template: "%s | WADA CDS"
+      default: "War Against Drug Abuse CDS – Lokoja",
+      template: "%s | WADA CDS – Community Health Initiative"
     },
     description:
-      "War against drug abuse Community Development Service Lokoja, Kogi State. Nigeria",
+      "Join the War Against Drug Abuse (WADA CDS) – a community-driven health and wellness initiative in Lokoja, Kogi State, Nigeria. Empowering youth, promoting sanity, and building a drug-free society.",
     keywords: [
-      "drug",
-      "Sanity",
-      "abuse",
-      "community",
-      "development",
-      "service"
+      "War Against Drug Abuse",
+      "WADA",
+      "CDS",
+      "Community Health",
+      "Drug Abuse Prevention",
+      "Youth Empowerment",
+      "Kogi State",
+      "Lokoja",
+      "Nigerian CDS",
+      "Wellness Initiative",
+      "Community Service",
+      "Drug Education"
     ],
-    authors: [{ name: "Clever Akanimoh" }],
+    authors: [
+      { name: "Clever Akanimoh", url: "https://yourdomain.com" }
+    ],
+    creator: "War Against Drug Abuse CDS Team",
+    publisher: "War Against Drug Abuse CDS",
+    metadataBase: new URL("https://yourdomain.com"), // Replace with actual domain
 
     openGraph: {
+      type: "website",
+      locale: "en_NG",
+      url: "https://yourdomain.com",
+      siteName: "War Against Drug Abuse CDS – Lokoja",
+      title:
+        "War Against Drug Abuse CDS – Empowering Communities for a Drug-Free Future",
+      description:
+        "A youth-led movement committed to community health, drug prevention education, and social development in Kogi State.",
       images: [
         {
           url: "/img/opengraph.png",
-          width: 800,
-          height: 600
+          width: 1200,
+          height: 630,
+          alt: "War Against Drug Abuse CDS – Lokoja, Nigeria"
         }
       ]
     },
+
     twitter: {
-      title: "War Against Drug Abuse CDS. Lokoja",
-      card: "summary_large_image"
+      card: "summary_large_image",
+      title: "War Against Drug Abuse CDS – Lokoja",
+      description:
+        "Join our mission to create a drug-free, healthy community in Kogi State. Youth-led, impact-driven.",
+      images: ["/img/opengraph.png"]
     },
+
     robots: {
       index: true,
-      follow: true
+      follow: true,
+      nocache: false
+    },
+
+    icons: {
+      icon: "/favicon.ico",
+      apple: "/apple-touch-icon.png"
     }
   };
 }
@@ -55,4 +86,4 @@ export default async function Layout({ children }) {
   );
 }
 // enable revalidate for all pages in this layout
-// export const revalidate = 60;
+export const revalidate = 60;
