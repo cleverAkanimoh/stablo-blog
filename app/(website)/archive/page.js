@@ -5,7 +5,7 @@ import Archive from "./archive";
 
 export const dynamic = "force-dynamic";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export default async function ArchivePage({ searchParams }) {
   return (
